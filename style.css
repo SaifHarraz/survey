@@ -1,101 +1,156 @@
-body{
-    color:whitesmoke;
-    font-family: Tahoma, Verdana, sans-serif;
-    font-size: 23px;
-    width:100%;
-    min-height: 100vh;
-    background-image: url(backgroundimg.jpg);
-    background-position:center ;
-    background-size:cover ;    
-    background-repeat: no-repeat;
+/* General reset */
+* {
+    margin: 0;
     padding: 0;
-    margin:0;
+    box-sizing: border-box;
+}
+
+/* Set a base font size */
+html {
+    font-size: 16px; /* Makes 1rem = 16px */
+}
+
+body {
+    color: whitesmoke;
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: 1rem;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('backgroundimg.jpg'); /* Ensure the correct path */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-main{
+
+/* Outer container to center everything */
+.outbody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgba(12, 50, 89, 0.89);
+}
+
+/* Main form container */
+main {
     width: 50%;
-    
-    margin: auto;
-    background-color:rgba(10, 20, 40, .5);
-    
+    max-width: 600px;
+    background-color: rgba(10, 20, 40, 0.5);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Labels */
 label {
     display: block;
-  }    
-.outbody{
-    display: flex;
-    min-height: 100vh;
-    width:100%;
-    background-color:rgba(12, 50, 89, .89);}
-h1{
-    font-size:50px;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
 }
-#description{
-    font-size: 20px;
 
-}  
-
-
-.top{
-    margin:auto;
-    text-align: center;
-    padding:10px;}
-
-
-.text{
-    width:95%;
-    margin:auto;
-    margin-left:0;
-    margin-bottom: 1.5em;
-
+/* Inputs, Select, Textarea */
+input, select, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
 }
-.farp{
-    margin-bottom: .4rem;
+
+/* Fieldsets */
+fieldset {
+    border: none;
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: left;
 }
-.like{
-    margin-top:1em ;
-}
-select{
-    padding-right: 11px;
-
-}
-    
-
-fieldset{
-    border:none;
-    
- } 
-
-
 fieldset:first-of-type{
     border-top:5px solid #3b3b4f; 
     border-bottom: 5px solid #3b3b4f;
-} 
-article{
-    margin-top:1.5em;
 }
-textarea{
-    margin-top: -1rem;
-}   
-    
 
-button{
-    width:95%;
-    margin-top:-.5rem;
-    margin-left: 1.3rem;
-    margin-bottom: 5rem;
-    height:2rem;
-    background-color:rgb(12, 160, 30);
+/* Radio and Checkbox inputs */
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin:0;
+    margin-right: 0.5rem;
+    
+}
+
+/* Button */
+button {
+    width: 100%;
+    height: 2.5rem;
+    background-color: rgb(12, 160, 30);
     color: white;
-    border:none ;
-    font-size:1.9rem;
-    
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.1s ease;
 }
-p:last-of-type{
-    font-size: .5em;
-    margin-bottom: 2px;
+
+button:hover {
+    background-color: rgb(10, 130, 25);
 }
 
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 1rem;
+    width: 100%;
+}
 
+footer p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
 
+/* Social Media Icon */
+footer a img {
+    height: 2rem;
+    width: 2rem;
+    transition: transform .1s ease;
+}
+
+footer a img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px; /* Reduce base size slightly */
+    }
     
+    main {
+        width: 70%;
+        padding: 5%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    button {
+        font-size: 1rem;
+        height: 2rem;
+    }
+}
